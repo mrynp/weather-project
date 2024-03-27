@@ -29,3 +29,14 @@ let currentDateValue = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateValue.innerHTML = updateDate(currentDate);
+
+function search(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  let query = searchInputElement.value;
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = query;
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
