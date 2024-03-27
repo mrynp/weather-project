@@ -28,25 +28,28 @@
         </form>
       </header>
       <main>
-        <div class="current-weather">
-          <div class="city-temp">
-            <h1 class="current-city" id="current-city">Paris</h1>
-            <div class="current-temperature">
-              <span class="current-temperature-value">24</span>
-              <span class="current-temperature-unit">°C</span>
+        <div class="weather-today">
+          <div class="current-weather">
+            <div class="city-temp">
+              <h1 class="current-city" id="current-city">Paris</h1>
+              <div class="current-temperature">
+                <span class="current-temperature-value">24</span>
+                <span class="current-temperature-unit">°C</span>
+              </div>
+            </div>
+            <div class="weather-info">
+              <div class="current-temperature-icon"></div>
+              <p class="current-details">
+                <span id="current-date">Wednesday 13:36</span>,
+                <span class="description">moderate rain</span> <br />
+                Humidity:
+                <strong><span class="humidity-value">87</span>%</strong>, Wind:
+                <strong><span class="wind-value">7.2</span>km/h</strong>
+              </p>
             </div>
           </div>
-          <div class="weather-info">
-            <span class="current-temperature-icon"></span>
-            <p class="current-details">
-              <span id="current-date">Wednesday 13:36</span>,
-              <span class="description">moderate rain</span> <br />
-              Humidity:
-              <strong><span class="humidity-value">87</span>%</strong>, Wind:
-              <strong><span class="wind-value">7.2</span>km/h</strong>
-            </p>
-          </div>
         </div>
+        <div class="weather-forecast" id="forecast"></div>
       </main>
       <footer>
         <p>

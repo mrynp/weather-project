@@ -61,6 +61,18 @@ function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
   searchCity(searchInput.value);
+  searchForecast(searchInput.value);
+}
+
+function updateForecast(response) {
+  let forecast = document.querySelector("#forecast");
+  console.log(response.data);
+}
+
+function searchForecast(city) {
+  let apiKey = "94c379409f43ba9697t5c0of6330a837";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(updateForecast);
 }
 
 let searchForm = document.querySelector("#search-form");
