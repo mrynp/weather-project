@@ -21,13 +21,17 @@ header {
   padding-bottom: 30px;
 }
 
+form {
+  display: flex;
+  gap: 5px;
+}
 .search-input {
   background-color: #f9f7fe;
   border: none;
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   padding: 20px;
-  width: 75%;
+  width: 90%;
   border-radius: 6px;
 }
 
@@ -40,6 +44,7 @@ header {
   padding: 20px;
   line-height: 1;
   border-radius: 5px;
+  width: 20%;
 }
 
 main {
