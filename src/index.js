@@ -51,28 +51,58 @@ function updateWeather(response) {
   currentDateValue.innerHTML = updateDate(currentDate);
 }
 
-function searchCity(city) {
-  let apiKey = "94c379409f43ba9697t5c0of6330a837";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-  axios.get(apiUrl).then(updateWeather);
-}
+function updateDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-input");
-  searchCity(searchInput.value);
-  searchForecast(searchInput.value);
+  return days[date.getDay()];
 }
 
 function updateForecast(response) {
   let forecast = document.querySelector("#forecast");
-  console.log(response.data);
+  let forecastHtml = "";
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="weather-forecast-day">
+        <div class="weather-forecast-date">${updateDay(day.time)}</div>
+
+        <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
+        <div class="weather-forecast-temperatures">
+          <div class="weather-forecast-temperature">
+            <strong>${Math.round(day.temperature.maximum)}º</strong>
+          </div>
+          <div class="weather-forecast-temperature">${Math.round(
+            day.temperature.minimum
+          )}º</div>
+        </div>
+      </div>
+      `;
+    }
+  });
+
+  forecast.innerHTML = forecastHtml;
+}
+
+function searchCity(city) {
+  let apiKey = "94c379409f43ba9697t5c0of6330a837";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(updateWeather);
+  searchForecast(city);
 }
 
 function searchForecast(city) {
   let apiKey = "94c379409f43ba9697t5c0of6330a837";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(updateForecast);
+}
+
+function search(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  searchCity(searchInput.value);
 }
 
 let searchForm = document.querySelector("#search-form");
