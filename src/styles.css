@@ -67,15 +67,15 @@ main {
   line-height: 24px;
 }
 
+.weather-info {
+  text-align: right;
+}
 .current-details strong {
   color: #f65282;
 }
 
 .current-temperature-icon {
-  position: relative;
-  top: -8px;
   font-size: 40px;
-  margin-right: 10px;
 }
 
 .current-temperature-value {
