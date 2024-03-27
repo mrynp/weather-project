@@ -7,6 +7,56 @@
     <title>Weather</title>
   </head>
   <body>
+    <div class="weather-app">
+      <header>
+        <form id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-input"
+            id="search-input"
+          />
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city" id="current-city">Paris</h1>
+            <p class="current-details">
+              <span id="current-date">Wednesday 13:36</span>,
+              <span class="description">moderate rain</span> <br />
+              Humidity:
+              <strong><span class="humidity-value">87</span>%</strong>, Wind:
+              <strong><span class="wind-value">7.2</span>km/h</strong>
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon">☀️</span
+            ><span class="current-temperature-value">24</span
+            ><span class="current-temperature-unit">°C</span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/mrynp" target="_blank"
+            >Marienne Panganiban</a
+          >
+          and is
+          <a href="https://github.com/mrynp/weather-project" target="_blank">
+            on GitHub</a
+          >
+          and
+          <a href="https://www.netlify.com/" target="_blank"
+            >hosted on Netlify</a
+          >
+        </p>
+      </footer>
+    </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>
