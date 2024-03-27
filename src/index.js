@@ -25,11 +25,6 @@ function updateDate(date) {
   return `${updatedDay} ${hours}:${minutes}`;
 }
 
-let currentDateValue = document.querySelector("#current-date");
-let currentDate = new Date();
-
-currentDateValue.innerHTML = updateDate(currentDate);
-
 function updateWeather(response) {
   let city = response.data.city;
   let cityDescription = response.data.condition.description;
@@ -37,6 +32,7 @@ function updateWeather(response) {
   let cityHumidity = response.data.temperature.humidity;
   let cityWind = response.data.wind.speed;
   let iconUrl = response.data.condition.icon_url;
+  let currentDate = new Date(response.data.time * 1000);
 
   let cityElement = document.querySelector("#current-city");
   let descriptionValue = document.querySelector(".description");
@@ -44,6 +40,7 @@ function updateWeather(response) {
   let humidityValue = document.querySelector(".humidity-value");
   let windValue = document.querySelector(".wind-value");
   let iconValue = document.querySelector(".current-temperature-icon");
+  let currentDateValue = document.querySelector("#current-date");
 
   cityElement.innerHTML = city;
   descriptionValue.innerHTML = cityDescription;
@@ -51,6 +48,7 @@ function updateWeather(response) {
   humidityValue.innerHTML = cityHumidity;
   windValue.innerHTML = cityWind;
   iconValue.innerHTML = `<img src="${iconUrl}">`;
+  currentDateValue.innerHTML = updateDate(currentDate);
 }
 
 function searchCity(city) {

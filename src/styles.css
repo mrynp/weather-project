@@ -25,6 +25,7 @@ form {
   display: flex;
   gap: 5px;
 }
+
 .search-input {
   background-color: #f9f7fe;
   border: none;
@@ -48,7 +49,7 @@ form {
 }
 
 main {
-  padding: 30px 0;
+  padding-bottom: 30px;
 }
 
 .current-temperature {
@@ -58,18 +59,22 @@ main {
 .current-weather {
   display: flex;
   justify-content: space-between;
+  height: 150px;
+  align-items: center;
 }
 
 .current-city {
   font-size: 38px;
   font-weight: 900;
   margin: 0;
+  padding-top: 30px;
 }
 .current-details {
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  margin: 0;
 }
 
 .weather-info {
@@ -80,7 +85,7 @@ main {
 }
 
 .current-temperature-icon {
-  font-size: 40px;
+  font-size: 0px;
 }
 
 .current-temperature-value {
