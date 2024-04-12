@@ -1,14 +1,24 @@
 body {
-  background: #f9f7fe;
+  /* background: #f9f7fe; */
+  /* background-image: url("https://images.pexels.com/photos/3768/sky-sunny-clouds-cloudy.jpg"); */
+  /* background-position: center; */
+  /* background-size: 100vw; */
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  background: url("assets/bg.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-family: "Roboto", sans-serif;
 }
 
 a {
-  color: #885df1;
+  color: #98b1d3;
 }
 
 .weather-app {
-  background: white;
+  background: #ecede1a7;
   max-width: 600px;
   margin: 60px auto;
   padding: 30px;
@@ -39,7 +49,7 @@ form {
 .search-button {
   margin-left: 5px;
   font-size: 16px;
-  background-color: #885df1;
+  background-color: #98b1d3;
   color: white;
   border: none;
   padding: 20px;
@@ -68,9 +78,10 @@ main {
   font-weight: 900;
   margin: 0;
   padding-top: 30px;
+  color: rgba(0, 0, 0, 0.6);
 }
 .current-details {
-  color: rgba(39, 33, 66, 0.4);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -81,7 +92,7 @@ main {
   text-align: right;
 }
 .current-details strong {
-  color: #f65282;
+  color: #297144;
 }
 
 .current-temperature-icon {
@@ -89,11 +100,13 @@ main {
 }
 
 .current-temperature-value {
+  color: rgba(0, 0, 0, 0.6);
   font-size: 80px;
   font-weight: bold;
 }
 
 .current-temperature-unit {
+  color: rgba(0, 0, 0, 0.6);
   font-size: 28px;
   position: relative;
   top: -38px;
@@ -107,7 +120,7 @@ main {
 
 .weather-forecast-date {
   text-align: center;
-  color: rgba(39, 33, 66, 0.4);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 10px;
@@ -121,7 +134,7 @@ main {
 }
 .weather-forecast-temperatures {
   text-align: center;
-  color: #f65282;
+  color: #297144;
   margin-top: 10px;
   display: flex;
   justify-content: center;
